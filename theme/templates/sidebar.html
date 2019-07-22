@@ -1,0 +1,96 @@
+<!-- Sidebar -->
+  <div id="sidebar">
+    <div class="inner">
+ 
+      <!-- Search -->
+        <section id="search" class="alt">
+          <form action="/search" onsubmit="return (this.elements['q'].value.length > 0)">
+            <input type="text" name="q" id="q" placeholder="Search" />
+          </form>
+        </section>
+ 
+      <!-- Menu -->
+        <nav id="menu">
+          <header class="major">
+            <h2>Menu</h2>
+          </header>
+          <ul>
+          {% if MENU_LINKS %}
+            {% for link in MENU_LINKS %}
+              {% if link[1] is string %}
+              <li><a href="{{ SITEURL }}/{{ link[1] }}">{{ link[0] }}</a></li>
+              {% else %}
+              <li>
+                <span class="opener">{{ link[0] }}</span>
+                <ul>
+                  {% for sublink in link[1] %}
+                    <li><a href="{{ SITEURL }}/{{ sublink[1] }}">{{ sublink[0] }}</a></li>
+                  {% endfor %}
+                </ul>
+              </li>
+              {% endif %}
+            {% endfor %}
+          {% else %}
+          <li><a href="{{ SITEURL }}">Homepage</a></li>
+          {% endif %}
+          </ul>
+        </nav>
+ 
+      <!-- Section -->
+        <section>
+          <header class="major">
+            <h2>Recent posts</h2>
+          </header>
+          <div class="mini-posts">
+        {% if all_articles %}
+          {% set arts = all_articles %}
+        {% else %}
+          {% set arts = articles %}
+        {% endif %}
+        {% for a in arts %}
+          {% if loop.index < 4 %}
+              <article>
+                <a href="{{ SITEURL }}/{{ a.url }}"> 
+                <h3>{{ a.title }}</h3>
+                </a>
+        
+                {% if a.splash_url %}
+				<a href="{{ SITEURL }}/{{ a.url }}" class="image"><img src="{{ SITEURL }}/{{a.splash_url}}" alt="" /></a>
+                {% endif %}
+
+                {% if a.summary %}
+                <p>{{ a.summary }}</p>
+                {% endif %}
+              </article>
+          {% endif %}
+        {% endfor %}
+          <ul class="actions">
+            <li><a href="{{ SITEURL }}/archive.html" class="button">More Articles</a></li>
+          </ul>
+        </section>
+ 
+      <!-- Section -->
+        <section>
+          <header class="major">
+            <h2>Get in touch</h2>
+          </header>
+          <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+          <ul class="contact">
+          {% for info, link, ico in CONTACTS %}
+            {% if link is none %}
+            <li class="icon {{ ico }}">{{ info }}</li>
+            {% else %}
+            <li class="icon {{ ico }}"><a href="{{ link }}">{{ info }}</a></li>
+            {% endif %}
+          {% endfor %}
+          </ul>
+        </section>
+ 
+        <!-- Footer -->
+        <footer id="footer">
+                <p class="copyright">&copy; {{ AUTHOR }}. All rights reserved. <br> Powered by <a href="https://blog.getpelican.com/">Pelican</a> <br>  Theme: <a href="https://github.com/awild82">Andrew Wildman</a>. <br> Demo Images: <a href="https://unsplash.com">Unsplash</a>. <br> Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+        </footer>
+
+    </div>
+  </div>
+

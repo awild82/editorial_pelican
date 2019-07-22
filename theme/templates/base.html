@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<!--
+  Editorial template for Pelican. Modified from:
+  Editorial by HTML5 UP
+  html5up.net | @ajlkn
+  Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html lang="{{ DEFAULT_LANG }}">
+  <head>
+    {% block head %}
+    <script src="{{ SITEURL }}/theme/js/jquery.min.js"></script>
+    <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{{ SITEURL }}/theme/css/main.css" />
+    {% endblock head %}
+  </head>
+  <body class="is-preload">
+
+    <!-- Wrapper -->
+      <div id="wrapper">
+
+
+        <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+              <header id="header">
+                <a href="{{ SITEURL }}/" class="logo"><strong>{{ SITENAME }}</strong> - {{ SITESUBTITLE }}</a>
+                <ul class="icons">
+	        {% for soc in SOCIAL %}
+		<li><a class="icon {{ soc[0] }}" href="{{ soc[1] }}"></a></li>
+		{% endfor %}
+                </ul>
+              </header>
+
+              {% block content %}
+              {% endblock %}
+
+          </div>
+        </div>
+
+        {% include 'sidebar.html' %}
+      </div>
+
+    <!-- Scripts -->
+      <script src="{{ SITEURL }}/theme/js/browser.min.js"></script>
+      <script src="{{ SITEURL }}/theme/js/breakpoints.min.js"></script>
+      <script src="{{ SITEURL }}/theme/js/util.js"></script>
+      <script src="{{ SITEURL }}/theme/js/main.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Search - {{ SITENAME|striptags }}
+{% endblock title %}
+
+{% block head %}
+{{ super() }}
+<script src="{{ SITEURL }}/tipuesearch_content.js"></script>
+<!--<link rel="stylesheet" href="{{ SITEURL }}/theme/tipuesearch/css/tipuesearch.css">-->
+<script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch_set.js"></script>
+<script src="{{ SITEURL }}/theme/tipuesearch/tipuesearch.min.js"></script>
+{% endblock head %}
+
+{% block content %}
+
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch({
+	 'show': 50,
+	 'showURL': false
+     });
+});
+</script>
+
+<div id="search" style="padding-top: 20px;">
+<form>
+<div class="tipue_search_group">
+        <input type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required>
+</div>
+</form>
+</div>
+
+<div id="tipue_search_content"></div>
+{% endblock content %}

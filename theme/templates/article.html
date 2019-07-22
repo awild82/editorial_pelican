@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+  {{ super() }}
+  {% if article.description %}
+    <meta name="description" content="{{article.summary}}" />
+  {% endif %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+              <!-- Content -->
+                <section>
+                  <header class="main">
+			  <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.title|striptags }}">{{ article.title }}</a></h1>
+			  <p>{{ article.headline }}</p>
+                  </header>
+
+                  By
+                  {% for auth in article.authors %}
+                  <a class="author" href="{{ SITEURL }}/{{ auth.url }}">{{ auth.name }}</a>
+                  {% if loop.index != loop.length %}
+                  and
+                  {% endif %}
+                  {% endfor %}
+                  <br>
+                  <p>On {{ article.locale_date }}</p>
+
+                  {{ article.content }}
+                </section>
+{% endblock content %}
