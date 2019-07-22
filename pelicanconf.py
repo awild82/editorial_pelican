@@ -23,7 +23,7 @@ EXTRA_PATH_METADATA = {
 }
 DIRECT_TEMPLATES = ['search', 'index', 'archives', 'authors', 'categories',
                     'tags', '404']
-PAGINATED_DIRECT_TEMPLATES = ['archives']
+PAGINATED_TEMPLATES = {'archives': None, 'tag': None, 'category': None, 'author': None}
 
 #
 # Plugins
@@ -49,7 +49,7 @@ THEME = 'theme'
 #     submenu: (<display text>, (<direct-link>), [<direct-link>]...))
 #   See README.md for more details
 
-MENU_LINKS = (('Homepage', ''),
+MENUITEMS = (('Homepage', ''),
               ('Generic', 'pages/generic'),
               ('Theme elements', 'elements'),
               ('Pelican pages', (

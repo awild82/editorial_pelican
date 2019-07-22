@@ -15,8 +15,8 @@
             <h2>Menu</h2>
           </header>
           <ul>
-          {% if MENU_LINKS %}
-            {% for link in MENU_LINKS %}
+          {% if MENUITEMS %}
+            {% for link in MENUITEMS %}
               {% if link[1] is string %}
               <li><a href="{{ SITEURL }}/{{ link[1] }}">{{ link[0] }}</a></li>
               {% else %}
