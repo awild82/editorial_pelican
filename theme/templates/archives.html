@@ -9,7 +9,7 @@
 
   <section>
     <div class="posts">
-  {% for a in articles %}
+  {% for a in articles_page.object_list %}
       <article>
 
         {% if a.splash_url %}
@@ -30,5 +30,8 @@
   {% endfor %}
     </div>
   </section>
+
+  {% include "paginator.html" %}
+
 </div>
 {% endblock %}
