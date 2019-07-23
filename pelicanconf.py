@@ -47,7 +47,6 @@ THEME = 'theme'
 #   Entries can be one of:
 #     direct-link: (<display text>, <link relative to root>)
 #     submenu: (<display text>, (<direct-link>), [<direct-link>]...))
-#   See README.md for more details
 
 MENUITEMS = (('Homepage', ''),
               ('Generic', 'pages/generic'),
