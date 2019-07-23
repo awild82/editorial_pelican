@@ -71,8 +71,8 @@ CONTACTS = (('information@untitled.tld', '#', 'solid fa-envelope'),
 #   Entries are:
 #     (<icon class name>, <link>)
 
-SOCIAL = (('brands fa-github', '#'),
-          ('brands fa-gitlab', '#'),
+SOCIAL = (('brands fa-github', 'https://github.com/awild82/editorial_pelican'),
+          ('brands fa-gitlab', 'https://gitlab.com/awild82/editorial_pelican'),
           ('fa-envelope', '#'))
 
 DEFAULT_PAGINATION = 6

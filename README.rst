@@ -5,7 +5,7 @@ Editorial for Pelican
 This is a Pelican template based on the `Editorial HTML template
 <https://html5up.net/editorial>`_ of `HTML5UP <https://html5up.net/>`_.
 
-A demo of this template can be found `here <https://TODO.FAKEURL.NET/>`_.
+A demo of this template can be found `here <https://awild82.gitlab.io/editorial_pelican>`_.
 
 .. contents:: **Contents**
   :local:
@@ -15,7 +15,7 @@ Features
 ========
 
 - Responsive Design (Desktop, Tablet, Tablet (Portrait), Mobile) 
-- Static site search via `tipue_search`
+- Static site search via :code:`tipue_search`
 - Pygments
 - Recent posts in sidebar 
 
@@ -30,14 +30,13 @@ template comes with some nice elements, which include:
 - Fitting images
 - Pretty buttons and pagination
 
-See the `Elements page <https://TODO.FAKEURL.NET/elements>`_ for examples of
-the above and more!
+See the `Elements page <https://awild82.gitlab.io/editorial_pelican/elements>`_
+for examples of the above and more!
 
-.. note::
   
-  This template works best with reStructuredText documents. I have yet to
-  figure out a "nice" way to apply the classes in the css file to Markdown
-  sections.
+**Note:** This template works best with reStructuredText documents. I have yet
+to figure out a "nice" way to apply the classes in the css file to Markdown
+sections.
 
 
 Installation
@@ -58,10 +57,10 @@ To install the requirements, simply run::
   pip install -r requirements.txt
 
 As the structure stands now, the plugins directory contains symlinks to the
-parent directory of the repo, assuming the :code:`pelican-plugins` repository
-was installed there. If this is not the case, the symlinks should be amended,
-the plugins can be installed into the :code:`plugins` directory directly, or
-you can modify your :code:`pelicanconf.py`.
+:code:`pelican-plugins` repository that was installed there as a submodule. If
+this is not the case, the symlinks should be amended, the plugins can be
+installed into the :code:`plugins` directory directly, or you can modify your
+:code:`pelicanconf.py`.
 
 Installing the template only
 ----------------------------
