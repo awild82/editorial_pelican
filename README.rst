@@ -7,6 +7,8 @@ This is a Pelican template based on the `Editorial HTML template
 
 A demo of this template can be found `here <https://awild82.gitlab.io/editorial_pelican>`_.
 
+Screenshots can be found in the root directory of the repository.
+
 .. contents:: **Contents**
   :local:
 
