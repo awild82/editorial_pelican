@@ -3660,3 +3660,10 @@ input, select, textarea {
 			padding-top: 0;
 		}
 
+a.tag {
+    border-radius: 0.2em;
+    background-color: #e4e6e7;
+    border: 0;
+    padding: 0 0.2em 0 0.2em;
+    color: #3d4449;
+}

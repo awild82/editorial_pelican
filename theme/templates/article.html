@@ -21,6 +21,7 @@
 			  <p>{{ article.headline }}</p>
                   </header>
 
+                  <!-- Authors -->
                   By
                   {% for auth in article.authors %}
                   <a class="author" href="{{ SITEURL }}/{{ auth.url }}">{{ auth.name }}</a>
@@ -28,8 +29,36 @@
                   and
                   {% endif %}
                   {% endfor %}
-                  <br>
-                  <p>On {{ article.locale_date }}</p>
+
+                  <!-- Date -->
+                  <span class="fas fa-calendar-alt" style="padding-left:0.5em"></span> {{ article.locale_date }}
+
+                  <!-- Tags -->
+                  {% if article.tags %}
+                  <span class="fas fa-tags" style="padding-left:0.5em"></span>
+                  {% for tag in article.tags %}
+                  <a class="tag" href="/{{ tag.url }}">{{ tag }}</a>
+                  {% endfor %}
+                  {% endif %}
+
+                  <!-- Post sharing on social media -->
+                  {% if SHAREPOST %}
+                    <br>
+                    Share:
+                    {% for site in SHAREPOST %}
+                      {% if site[2] %}
+                      <span style="padding-left:0.5em"></span>
+                      <a href="{{article.share_post[site[1]]}}" target="_blank" title="Share on {{site[0]}}">
+                          {% if site[1] == "email" %}
+                            <i class="icon fa-envelope"></i>
+                          {% else %}
+                            <i class="fab fa-{{site[1]}}"></i>
+                          {% endif %}
+                          {{site[0]}}
+                      </a>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
 
                   {{ article.content }}
                 </section>
