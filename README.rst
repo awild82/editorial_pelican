@@ -91,6 +91,9 @@ The templates use the following variables:
 | :code:`SOCIAL`         | Configuring the icons and links at the top of the |
 |                        | page.                                             |
 +------------------------+---------------------------------------------------+
+| :code:`SHAREPOST`      | Configuring the "Share on:" links at the top of   |
+|                        | every post.                                       |
++------------------------+---------------------------------------------------+
 
 When needed, icon class codes should correspond to the font-awesome class. 
 
